@@ -37,3 +37,6 @@ template-dev-init:
 	@echo 'android/\nios/\nweb/\nwindows/\nmacos/\nlinux/\n' > .dev.gitignore
 	@git config core.excludesfile .dev.gitignore
 	@cd app && flutter create --org com.sizzle.sizzle_starter . && rm -f test/widget_test.dart
+
+git-last-diff:
+	$(DART) run ./scripts/git_last_diff.dart

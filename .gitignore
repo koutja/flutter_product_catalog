@@ -62,3 +62,4 @@ tests.json
 # Template
 .dev.gitignore
 
+/diff_output.txt
