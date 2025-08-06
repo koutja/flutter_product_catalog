@@ -1,0 +1,220 @@
+openapi: 3.0.1
+info:
+  title: JSON Server API for Products
+  version: 1.0.0
+  description: REST API for managing products using typicode/json-server.
+servers:
+  - url: http://localhost:3000
+    description: Local JSON server instance
+paths:
+  /products:
+    get:
+      summary: Get all products
+      parameters:
+        - in: query
+          name: _start
+          schema:
+            type: integer
+          description: Start index for pagination
+        - in: query
+          name: _end
+          schema:
+            type: integer
+          description: End index for pagination
+        - in: query
+          name: _limit
+          schema:
+            type: integer
+          description: Limit the number of results
+        - in: query
+          name: _page
+          schema:
+            type: integer
+          description: Page number for pagination
+        - in: query
+          name: _per_page
+          schema:
+            type: integer
+          description: Number of items per page
+        - in: query
+          name: _sort
+          schema:
+            type: string
+          description: Sort by field(s), prefix with `-` for descending
+        - in: query
+          name: _embed
+          schema:
+            type: string
+          description: Embed related resources (e.g., categories)
+        - in: query
+          name: id
+          schema:
+            type: integer
+          description: Filter by product ID
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Filter by product name
+        - in: query
+          name: price_gt
+          schema:
+            type: number
+          description: Filter by price greater than
+        - in: query
+          name: price_gte
+          schema:
+            type: number
+          description: Filter by price greater than or equal to
+        - in: query
+          name: price_lt
+          schema:
+            type: number
+          description: Filter by price less than
+        - in: query
+          name: price_lte
+          schema:
+            type: number
+          description: Filter by price less than or equal to
+        - in: query
+          name: material
+          schema:
+            type: string
+          description: Filter by material
+        - in: query
+          name: "category.id"
+          schema:
+            type: integer
+          description: Filter by category ID
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+    post:
+      summary: Create a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+
+  /products/{id}:
+    get:
+      summary: Get a specific product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the product
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+
+    put:
+      summary: Update a product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+
+    patch:
+      summary: Partially update a product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product partially updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+
+    delete:
+      summary: Delete a product by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: ID of the product
+      responses:
+        '204':
+          description: Product deleted successfully
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Cotopaxi Allpa 35L Travel Pack"
+        description:
+          type: string
+          example: "Durable and stylish backpack made from recycled materials..."
+        price:
+          type: number
+          format: float
+          example: 179
+        material:
+          type: string
+          example: "Recycled nylon, polyester"
+        category:
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 11
+          required: [id]
+      required: [id, name, description, price, material, category]
