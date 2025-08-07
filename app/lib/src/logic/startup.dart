@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:app/src/bloc/app_bloc_observer.dart';
-import 'package:app/src/bloc/bloc_transformer.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart' as bloc_concurrency;
 import 'package:app/src/logic/composition_root.dart';
 import 'package:app/src/model/application_config.dart';
 import 'package:app/src/widget/initialization_failed_app.dart';
@@ -15,11 +14,7 @@ import 'package:logger/logger.dart';
 Future<void> startup() async {
   const config = ApplicationConfig();
 
-  final logger = createAppLogger(
-    observers: [
-      if (!kReleaseMode) const PrintingLogObserver(logLevel: LogLevel.trace),
-    ],
-  );
+  final logger = createAppLogger();
 
   await runZonedGuarded(
     () async {
@@ -31,8 +26,8 @@ Future<void> startup() async {
       WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
 
       // Setup bloc observer and transformer
-      Bloc.observer = AppBlocObserver(logger);
-      Bloc.transformer = SequentialBlocTransformer<Object?>().transform;
+      Bloc.observer = logger.createBlocObserver();
+      Bloc.transformer = bloc_concurrency.sequential();
 
       Future<void> composeAndRun() async {
         try {
@@ -42,12 +37,12 @@ Future<void> startup() async {
           );
 
           runApp(RootContext(compositionResult: compositionResult));
-        } on Object catch (e, stackTrace) {
-          logger.error('Initialization failed', error: e, stackTrace: stackTrace);
+        } on Object catch (e, st) {
+          logger.error('Initialization failed', e, st);
           runApp(
             InitializationFailedApp(
               error: e,
-              stackTrace: stackTrace,
+              stackTrace: st,
               onRetryInitialization: composeAndRun,
             ),
           );

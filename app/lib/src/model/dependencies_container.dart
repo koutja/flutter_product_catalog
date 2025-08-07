@@ -1,6 +1,7 @@
 import 'package:app/src/model/application_config.dart';
 import 'package:logger/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:product_catalog/export.dart';
 import 'package:settings_api/settings_api.dart';
 
 /// Container for global dependencies.
@@ -9,13 +10,13 @@ class DependenciesContainer {
     required this.logger,
     required this.config,
     required this.packageInfo,
-    required this.settingsContainer,
+    required this.productCatalogContainer,
   });
 
   final Logger logger;
   final ApplicationConfig config;
   final PackageInfo packageInfo;
-  final SettingsContainer settingsContainer;
+  final ProductCatalogContainer productCatalogContainer;
 }
 
 /// A special version of [DependenciesContainer] that is used in tests.

@@ -19,10 +19,7 @@ class ApplicationConfig {
   }
 
   /// The Sentry DSN.
-  String get sentryDsn => const String.fromEnvironment('SENTRY_DSN').trim();
-
-  /// Whether Sentry is enabled.
-  bool get enableSentry => sentryDsn.isNotEmpty;
+  String get baseApiUrl => const String.fromEnvironment('BASE_API_URL').trim();
 }
 
 /// A special version of [ApplicationConfig] that is used in tests.

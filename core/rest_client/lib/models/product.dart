@@ -12,7 +12,7 @@ part 'product.g.dart';
 @Freezed()
 abstract class Product with _$Product {
   const factory Product({
-    required int id,
+    required dynamic id,
     required String name,
     required String description,
     required double price,

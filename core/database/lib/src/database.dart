@@ -1,3 +1,5 @@
+import 'package:database/src/product/dao.dart';
+import 'package:database/src/product/table.dart';
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 
@@ -6,7 +8,7 @@ part 'database.g.dart';
 /// {@template database}
 /// The drift-managed database configuration
 /// {@endtemplate}
-@DriftDatabase()
+@DriftDatabase(tables: [ProductTable], daos: [ProductDao])
 class AppDatabase extends _$AppDatabase {
   /// {@macro database}
   AppDatabase(super.e);

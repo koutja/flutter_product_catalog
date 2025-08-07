@@ -1,0 +1,260 @@
+{
+  "first": 1,
+  "prev": null,
+  "next": 2,
+  "last": 6,
+  "pages": 6,
+  "items": 150,
+  "data": [
+    {
+      "id": "1",
+      "name": "Cotopaxi Allpa 35L Travel Pack",
+      "description": "Durable and stylish backpack made from recycled materials. Versatile design, organization compartments.",
+      "price": 179,
+      "material": "Recycled nylon, polyester",
+      "category": {
+        "id": 11
+      }
+    },
+    {
+      "id": "10",
+      "name": "Wooden Dollhouse with Furniture",
+      "description": "Spark imaginary play with this charming wooden dollhouse complete with furniture. Let your child's creativity flourish as they create stories and adventures for their dolls.",
+      "price": 79.99,
+      "material": "Wood",
+      "category": {
+        "id": 12
+      }
+    },
+    {
+      "id": "100",
+      "name": "Fitbit Sense Smartwatch",
+      "description": "Track your health and fitness goals with this advanced smartwatch. Features heart rate monitoring, sleep tracking, stress management tools, and built-in GPS.",
+      "price": 299.99,
+      "material": "Plastic, metal",
+      "category": {
+        "id": 9
+      }
+    },
+    {
+      "id": "101",
+      "name": "Levi's Wedgie Straight Jeans",
+      "description": "High-waisted, straight-leg jeans with flattering fit",
+      "price": 98,
+      "material": "Cotton, elastane",
+      "category": {
+        "id": 10
+      }
+    },
+    {
+      "id": "102",
+      "name": "Bamboo Cutting Board Set",
+      "description": "This eco-friendly cutting board set includes three different sizes for chopping vegetables, slicing meat, and serving cheese. Bamboo is naturally antibacterial and gentle on knives.",
+      "price": 29.99,
+      "material": "Bamboo",
+      "category": {
+        "id": 5
+      }
+    },
+    {
+      "id": "103",
+      "name": "Marucci CAT9 Composite Baseball Bat",
+      "description": "Swing for the fences with this top-of-the-line bat. Designed for power hitters, it features a CAT9 composite barrel for maximum bat speed and distance, and a comfortable swing weight for optimal control.",
+      "price": 249.99,
+      "material": "Composite material",
+      "category": {
+        "id": 14
+      }
+    },
+    {
+      "id": "104",
+      "name": "Lululemon Align™ High-Rise Pant",
+      "description": "Find your flow in these ultra-soft and flexible yoga pants. Made with sweat-wicking fabric and a flattering high-rise waist, they offer comfort and support for any workout.",
+      "price": 98,
+      "material": "Nylon, Luon® blend",
+      "category": {
+        "id": 14
+      }
+    },
+    {
+      "id": "105",
+      "name": "Audio-Technica AT-LP120XBT-USB Vinyl Turntable",
+      "description": "Rediscover the magic of vinyl with this Bluetooth-enabled turntable. Enjoy rich, warm sound and easy connectivity to modern speakers. Sleek design with a walnut finish adds a touch of vintage charm.",
+      "price": 349.99,
+      "material": "Wood, plastic",
+      "category": {
+        "id": 3
+      }
+    },
+    {
+      "id": "106",
+      "name": "Educational Coding Robot Kit",
+      "description": "Learn the basics of coding and robotics with this fun and interactive kit. Build your own robot and program it to move, light up, and perform tasks, ideal for STEM learning.",
+      "price": 69.99,
+      "material": "Plastic, Electronics",
+      "category": {
+        "id": 12
+      }
+    },
+    {
+      "id": "107",
+      "name": "Garmin Forerunner 945 GPS Running Watch",
+      "description": "Track your every run with this advanced GPS watch. Featuring built-in pace and distance tracking, heart rate monitoring, and advanced training metrics, it's your ultimate running companion.",
+      "price": 399.99,
+      "material": "Polymer, stainless steel, sapphire crystal",
+      "category": {
+        "id": 14
+      }
+    },
+    {
+      "id": "108",
+      "name": "The Ordinary Niacinamide 10% + Zinc 1%",
+      "description": "This high-strength serum helps minimize pore appearance, regulate sebum production, and improve uneven skin tone. Suitable for oily, acne-prone skin.",
+      "price": 5.9,
+      "material": "Aqua (Water), Niacinamide, Zinc PCA, Butylene Glycol, Isopropyl Alcohol, Panthenol, Sodium Ascorbate, Xanthan Gum",
+      "category": {
+        "id": 13
+      }
+    },
+    {
+      "id": "109",
+      "name": "The Paris Review",
+      "description": "Get lost in the world of literature with The Paris Review, featuring interviews with renowned authors, captivating short stories, and insightful book reviews. Discover new voices, revisit old favorites, and delve deeper into the art of storytelling.",
+      "price": 20,
+      "material": "Magazine",
+      "category": {
+        "id": 7
+      }
+    },
+    {
+      "id": "11",
+      "name": "Fire HD 10 Plus",
+      "description": "Get lost in your favorite books, movies, and games on the 10.1-inch HD display. Enjoy long-lasting battery life and access to millions of apps on the Amazon Appstore. Lightweight plastic build for everyday portability.",
+      "price": 149.99,
+      "material": "Plastic",
+      "category": {
+        "id": 2
+      }
+    },
+    {
+      "id": "110",
+      "name": "OPPO Reno 8 Lite",
+      "description": "Capture life's moments in stunning detail with the AI-powered triple-lens camera system. Long-lasting battery and a vibrant AMOLED display let you stay entertained all day long. Stylish polycarbonate construction offers durability and value.",
+      "price": 349.99,
+      "material": "Polycarbonate",
+      "category": {
+        "id": 2
+      }
+    },
+    {
+      "id": "111",
+      "name": "Osprey Farpoint/Fairview Travel Backpack",
+      "description": "Comfortable and versatile travel backpack. Gender-specific designs, multiple compartments, breathable suspension.",
+      "price": 199.99,
+      "material": "Polyester, nylon",
+      "category": {
+        "id": 11
+      }
+    },
+    {
+      "id": "112",
+      "name": "Casper Original Hybrid Mattress",
+      "description": "This hybrid mattress combines the comfort of memory foam with the support of innerspring coils. It's designed to provide a cool, comfortable sleep and comes with a 100-night trial.",
+      "price": 1.495,
+      "material": "Memory foam, innerspring coils",
+      "category": {
+        "id": 5
+      }
+    },
+    {
+      "id": "113",
+      "name": "Marshall Stanmore II Bluetooth Speaker",
+      "description": "Fill your room with iconic Marshall sound. Rugged design with classic leather details and powerful audio makes it perfect for any party or gathering.",
+      "price": 279,
+      "material": "Leather, plastic",
+      "category": {
+        "id": 8
+      }
+    },
+    {
+      "id": "114",
+      "name": "LEGO Classic Creative Brick Box",
+      "description": "Unleash endless creativity with this classic collection of Lego bricks! Build anything you can imagine with vibrant colors, shapes, and sizes, perfect for children of all ages.",
+      "price": 49.99,
+      "material": "Plastic",
+      "category": {
+        "id": 12
+      }
+    },
+    {
+      "id": "115",
+      "name": "Secretlab Titan Evo 2022 Series Gaming Chair",
+      "description": "Experience all-day comfort and support with the Titan Evo 2022, featuring adjustable lumbar support, breathable upholstery, and a variety of color options.",
+      "price": 449.99,
+      "material": "Fabric, leather, metal",
+      "category": {
+        "id": 4
+      }
+    },
+    {
+      "id": "116",
+      "name": "All-Clad Stainless Steel Cookware Set",
+      "description": "This professional-grade cookware set features durable stainless steel construction and even heat distribution. It's perfect for serious home cooks who want the best tools for their kitchen.",
+      "price": 799.99,
+      "material": "Stainless steel",
+      "category": {
+        "id": 5
+      }
+    },
+    {
+      "id": "117",
+      "name": "Realme Pad Mini",
+      "description": "Your perfect entertainment and productivity companion. The compact design boasts a vibrant HD display and powerful Unisoc T616 processor. Durable aluminum construction delivers a premium feel at an affordable price.",
+      "price": 249.99,
+      "material": "Aluminum",
+      "category": {
+        "id": 2
+      }
+    },
+    {
+      "id": "118",
+      "name": "Filofax Personal Organizer",
+      "description": "Plan your days and schedule with this classic leather organizer. Includes weekly pages, note sections, and pockets for cards and receipts. Stay organized and stylish throughout your busy day.",
+      "price": 79.99,
+      "material": "Leather, paper",
+      "category": {
+        "id": 6
+      }
+    },
+    {
+      "id": "119",
+      "name": "Atomic Habits by James Clear",
+      "description": "Learn the tiny behaviors that can lead to remarkable results. James Clear's Atomic Habits reveals practical strategies for improving your life - one small step at a time. Achieve your goals, break bad habits, and build good ones with this insightful and actionable guide.",
+      "price": 14.99,
+      "material": "Paperback",
+      "category": {
+        "id": 7
+      }
+    },
+    {
+      "id": "12",
+      "name": "Furby Boom",
+      "description": "The iconic Furby is back with a modern twist! This interactive plush toy responds to touch and voice, develops its personality over time, and offers hours of fun with its expressive animations, quirky sounds, and virtual features through the Furby Boom app. A blast from the past for adults and a captivating companion for kids, the Furby Boom is a popular and trending toy.",
+      "price": 49.99,
+      "material": "Plush, plastic, electronics",
+      "category": {
+        "id": 12
+      }
+    },
+    {
+      "id": "120",
+      "name": "Nespresso VertuoPlus Coffee & Espresso Machine",
+      "description": "Enjoy barista-quality coffee at home with this sleek and convenient machine. It brews both classic and espresso coffees with the simple press of a button.",
+      "price": 229.99,
+      "material": "Plastic, stainless steel",
+      "category": {
+        "id": 5
+      }
+    }
+  ]
+}

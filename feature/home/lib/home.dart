@@ -1,1 +1,1 @@
-export 'src/presentation/widget/home_screen.dart';
+export 'src/ui/home_screen.dart';

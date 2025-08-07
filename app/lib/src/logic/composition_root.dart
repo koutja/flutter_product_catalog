@@ -1,9 +1,12 @@
 import 'package:app/src/model/application_config.dart';
 import 'package:app/src/model/dependencies_container.dart';
 import 'package:clock/clock.dart';
+import 'package:database/database.dart';
+import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:settings_api/settings_api.dart';
+import 'package:product_catalog/export.dart';
+import 'package:rest_client/main_api_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A place where Application-Wide dependencies are initialized.
@@ -50,29 +53,35 @@ Future<DependenciesContainer> createDependenciesContainer(
   ApplicationConfig config,
   Logger logger,
 ) async {
-  // Create or obtain the shared preferences instance.
-  final sharedPreferences = SharedPreferencesAsync();
+  final db = AppDatabase.defaults(name: 'main');
 
   // Get package info.
   final packageInfo = await PackageInfo.fromPlatform();
 
-  final settingsContainer = await SettingsContainer.create(sharedPreferences);
+  final mainApiClient = createMainApiClient(config, logger);
+
+  final productCatalogContainer = await ProductCatalogContainer.create(mainApiClient, db, logger);
 
   return DependenciesContainer(
     logger: logger,
     config: config,
     packageInfo: packageInfo,
-    settingsContainer: settingsContainer,
+    productCatalogContainer: productCatalogContainer,
   );
 }
 
 /// Creates the [Logger] instance and attaches any provided observers.
-Logger createAppLogger({List<LogObserver> observers = const []}) {
+Logger createAppLogger() {
   final logger = Logger();
 
-  for (final observer in observers) {
-    logger.addObserver(observer);
-  }
-
   return logger;
+}
+
+MainApiClient createMainApiClient(
+  ApplicationConfig config,
+    Logger  logger,
+) {
+  final dio = Dio(BaseOptions(baseUrl: config.baseApiUrl));
+  dio.interceptors.add(logger.createDioLogger(logger.createDioLoggerSettings()));
+  return MainApiClient(dio);
 }

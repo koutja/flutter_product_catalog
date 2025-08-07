@@ -10,6 +10,7 @@ paths:
   /products:
     get:
       summary: Get all products
+      operationId: getAllProducts
       parameters:
         - in: query
           name: _start
@@ -92,12 +93,11 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/ProductPagingList'
 
     post:
       summary: Create a new product
+      operationId: createProduct
       requestBody:
         required: true
         content:
@@ -115,6 +115,7 @@ paths:
   /products/{id}:
     get:
       summary: Get a specific product by ID
+      operationId: getProduct
       parameters:
         - in: path
           name: id
@@ -132,6 +133,7 @@ paths:
 
     put:
       summary: Update a product by ID
+      operationId: putProduct
       parameters:
         - in: path
           name: id
@@ -155,6 +157,7 @@ paths:
 
     patch:
       summary: Partially update a product by ID
+      operationId: patchProduct
       parameters:
         - in: path
           name: id
@@ -178,6 +181,7 @@ paths:
 
     delete:
       summary: Delete a product by ID
+      operationId: deleteProduct
       parameters:
         - in: path
           name: id
@@ -195,8 +199,9 @@ components:
       type: object
       properties:
         id:
-          type: integer
-          example: 1
+          oneOf:
+            - type: integer
+            - type: string
         name:
           type: string
           example: "Cotopaxi Allpa 35L Travel Pack"
@@ -218,3 +223,31 @@ components:
               example: 11
           required: [id]
       required: [id, name, description, price, material, category]
+    ProductPagingList:
+      type: object
+      properties:
+        first:
+          type: integer
+          example: 1
+        prev:
+          type: integer
+          nullable: true
+          example: null
+        next:
+          type: integer
+          nullable: true
+          example: 2
+        last:
+          type: integer
+          example: 6
+        pages:
+          type: integer
+          example: 6
+        items:
+          type: integer
+          example: 150
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+      required: [ first, prev, next, last, pages, items, data ]

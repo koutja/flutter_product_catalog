@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/product.dart';
+import '../models/product_paging_list.dart';
 
 part 'client_api_client.g.dart';
 
@@ -45,7 +46,7 @@ abstract class ClientApiClient {
   ///
   /// [categoryId] - Filter by category ID.
   @GET('/products')
-  Future<HttpResponse<List<Product>>> getProducts({
+  Future<HttpResponse<ProductPagingList>> getAllProducts({
     @Query('_start') int? privateStart,
     @Query('_end') int? privateEnd,
     @Query('_limit') int? privateLimit,
@@ -65,7 +66,7 @@ abstract class ClientApiClient {
 
   /// Create a new product
   @POST('/products')
-  Future<HttpResponse<Product>> postProducts({
+  Future<HttpResponse<Product>> createProduct({
     @Body() required Product body,
   });
 
@@ -73,7 +74,7 @@ abstract class ClientApiClient {
   ///
   /// [id] - ID of the product.
   @GET('/products/{id}')
-  Future<HttpResponse<Product>> getProductsId({
+  Future<HttpResponse<Product>> getProduct({
     @Path('id') required int id,
   });
 
@@ -81,7 +82,7 @@ abstract class ClientApiClient {
   ///
   /// [id] - ID of the product.
   @PUT('/products/{id}')
-  Future<HttpResponse<Product>> putProductsId({
+  Future<HttpResponse<Product>> putProduct({
     @Path('id') required int id,
     @Body() required Product body,
   });
@@ -90,7 +91,7 @@ abstract class ClientApiClient {
   ///
   /// [id] - ID of the product.
   @PATCH('/products/{id}')
-  Future<HttpResponse<Product>> patchProductsId({
+  Future<HttpResponse<Product>> patchProduct({
     @Path('id') required int id,
     @Body() required Product body,
   });
@@ -99,7 +100,7 @@ abstract class ClientApiClient {
   ///
   /// [id] - ID of the product.
   @DELETE('/products/{id}')
-  Future<HttpResponse<void>> deleteProductsId({
+  Future<HttpResponse<void>> deleteProduct({
     @Path('id') required int id,
   });
 }

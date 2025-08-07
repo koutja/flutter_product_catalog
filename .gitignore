@@ -63,3 +63,4 @@ tests.json
 .dev.gitignore
 
 /diff_output.txt
+/server/node_modules/

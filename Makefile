@@ -20,6 +20,8 @@ get:
 bootstrap:
 	bash scripts/bootstrap.bash
 
+b: bootstrap
+
 # Task: Generate Dart files
 gen:
 	@echo "Running Dart codegen..."

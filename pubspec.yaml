@@ -18,4 +18,5 @@ workspace:
   - core/database
   # Feature
   - feature/settings/settings_api
+  - feature/product_catalog
   - feature/home
